@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.glitch-font {
+  font-family: 'Rubik Glitch', cursive;
+}
+
+.horror-font {
+  font-family: 'Creepster', cursive;
+}
+
+.military-font {
+  font-family: 'Black Ops One', cursive;
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 2px 2px #ff0000, -2px -2px #00ff00;
+    transform: translate(0);
+  }
+  20% {
+    text-shadow: -2px 2px #ff0000, 2px -2px #00ff00;
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    text-shadow: 2px -2px #ff0000, -2px 2px #00ff00;
+    transform: translate(2px, -2px);
+  }
+  60% {
+    text-shadow: -2px -2px #ff0000, 2px 2px #00ff00;
+    transform: translate(-2px, -2px);
+  }
+  80% {
+    text-shadow: 2px 2px #ff0000, -2px -2px #00ff00;
+    transform: translate(2px, 2px);
+  }
+  100% {
+    text-shadow: 2px 2px #ff0000, -2px -2px #00ff00;
+    transform: translate(0);
+  }
+}
+
+@keyframes glitchHard {
+  0%, 100% {
+    clip-path: inset(0 0 0 0);
+    transform: translate(0);
+  }
+  10% {
+    clip-path: inset(20% 0 60% 0);
+    transform: translate(-5px, 5px);
+  }
+  20% {
+    clip-path: inset(60% 0 20% 0);
+    transform: translate(5px, -5px);
+  }
+  30% {
+    clip-path: inset(40% 0 40% 0);
+    transform: translate(-3px, 3px);
+  }
+  40% {
+    clip-path: inset(10% 0 70% 0);
+    transform: translate(3px, -3px);
+  }
+  50% {
+    clip-path: inset(70% 0 10% 0);
+    transform: translate(-2px, 2px);
+  }
+}
+
+.glitch-text {
+  animation: glitch 0.3s infinite;
+}
+
+.glitch-hard {
+  animation: glitchHard 0.5s infinite;
+}
+
+@keyframes pulse-red {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 0, 0, 0.9);
+  }
+}
+
+.pulse-red {
+  animation: pulse-red 2s infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes spin-explode {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+.spin-explode {
+  animation: spin-explode 4s ease-in-out infinite;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.shake {
+  animation: shake 0.5s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.text-stroke {
+  -webkit-text-stroke: 2px black;
+  text-stroke: 2px black;
+}
